@@ -1,6 +1,7 @@
 export const handleSubmit = async (event) => {
   event.preventDefault();
   const subscribeForm = document.getElementById("subscribe-form");
+  let logMsg = document.getElementById("log");
   let subscribeFormData = new FormData(subscribeForm);
   let response = await fetch("./.netlify/functions/triggerSubscribeEmail", {
     method: "POST",
@@ -13,7 +14,6 @@ export const handleSubmit = async (event) => {
   });
   if (response.ok) {
     let msg = await response.text();
-    const logMsg = document.getElementById("log");
     logMsg.innerHTML = msg;
     console.log(msg);
     let response2 = await fetch("./.netlify/functions/triggerNotificationEmail", {
@@ -32,6 +32,7 @@ export const handleSubmit = async (event) => {
       console.log("Response 2 NOT OK. HTTP-Error: " + response2.status);
     }
   } else {
+    logMsg.innerHTML = `Your subscription was not successful. Please contact us. The error was HTTP-Error: ${response.status}`;
     console.log("Response 1 NOT OK. HTTP-Error: " + response.status);
   }
 };
