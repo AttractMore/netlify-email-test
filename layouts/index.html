@@ -1,0 +1,17 @@
+{{ partial "header.html" . }}
+
+<div id="inner-content" class="wrap cf">
+  <article class="cf" role="article" itemscope itemtype="http://schema.org/BlogPosting">
+    {{ .Content }}
+    <form id="subscribe-form">
+      <label>First name<input id="firstName" name="firstName" type="text" /></label>
+      <label>Last name<input id="lastName" name="lastName" type="text" /></label>
+      <label>Email<input id="email" name="email" type="email" /></label>
+      <label>Message<textarea id="message" name="message"></textarea></label>
+      <button class="primary-btn" id="submit" type="submit">Subscribe</button>
+    </form>
+    <p id="log"></p>
+  </article>
+</div>
+
+{{ partial "footer.html" . }}

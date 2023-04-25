@@ -1,0 +1,22 @@
+/******************************************************************
+Site Name: ORA Design
+Author:	Roger Knight - AttractMore
+
+******************************************************************/
+// normalize: http://necolas.github.io/normalize.css/
+@import "partials/normalize";
+@import "partials/variables";
+@import "partials/mixins";
+@import "partials/typography";
+/*********************
+IMPORTING MODULES
+*********************/
+@import "modules/buttons";
+@import "modules/forms";
+
+/*********************
+BASE
+*********************/
+@import "breakpoints/base";
+@import "partials/header";
+@import "partials/footer";

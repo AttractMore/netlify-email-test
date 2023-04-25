@@ -1,0 +1,45 @@
+/******************************************************************
+Site Name: ORA design architecture
+Stylesheet: Variables
+******************************************************************/
+
+/*********************
+COLORS
+*********************/
+$theme-green:       #4F9D20;
+$theme-dark-grey:   #222;
+$theme-mid-grey:    #CCC;
+$theme-light-grey:  #E5E5E5;
+$theme-red:		      #C74714;
+$theme-blue:        #3F4DD0;
+
+$black:             #000;
+$white:             #fff;
+
+$text-color:        $theme-dark-grey;
+$link-color:        $theme-blue;
+$link-hover-color:  darken($theme-blue, 20%);
+
+$facebook-colour:   #3b5998;
+$linkedin-colour:   #2867b2;
+
+/***************************************
+    BREAKPOINTS
+****************************************/
+$bp-tiny:			      30em; /* 480px */
+$bp-intermediate:   32em; /* 512px */
+$bp-small:			    40em; /* 640px */
+$bp-medium:			    48em; /* 768px */
+$bp-large:			    58em; /* 928px */
+$bp-larger:         64em; /* 1024px */
+$bp-huge:			      72em; /* 1152px */
+
+/***************************************
+	OTHERS
+***************************************/
+$radius:			      4px;
+$base-font-size:    16px;
+$base-font-size2:   18px;
+$line-height: 		  1.5;
+
+$menu-width:        265px;

@@ -1,0 +1,122 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Mixins Stylesheet
+
+******************************************************************/
+
+/*********************
+SORT OUT FONT SIZES
+*********************/
+
+@mixin set-font-size($factor) {
+  font-size: round( $base-font-size * $factor );
+  line-height: round( $base-font-size * $line-height * $factor );
+  @media screen and (min-width:$bp-medium) {
+	  font-size: round( $base-font-size2 * $factor );
+	  line-height: round( $base-font-size2 * $line-height * $factor );
+	}
+}
+
+@mixin transform($val) {
+  -webkit-transform: $val;
+  -moz-transform: $val;
+  transform: $val;
+}
+@mixin transform-origin($val1, $val2) {
+  -webkit-transform-origin: $val1 $val2;
+  -moz-transform-origin: $val1 $val2;
+  transform-origin: $val1 $val2;
+}
+@mixin transform-translate($x, $y){
+    @if($x != null){
+        -webkit-transform: translateX($x);
+        -moz-transform   : translateX($x);
+        transform        : translateX($x);
+    }
+    @if($y != null){
+        -webkit-transform: translateY($y);
+        -moz-transform   : translateY($y);
+        transform        : translateY($y);
+    }
+}
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+	-webkit-transform: 	translate(-50%,-50%);
+	-moz-transform: 	translate(-50%,-50%);
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+	-webkit-transform: 	translate(-50%,0);
+	-moz-transform: 	translate(-50%,0);
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+	-webkit-transform: 	translate(0,-50%);
+	-moz-transform: 	translate(0,-50%);
+    transform: translate(0, -50%);
+  }
+}
+
+@mixin fontface($family, $suffix) {
+	@font-face {
+		font-family: $family;
+		src:url('/fonts/icomoon.ttf?#{$suffix}') format('truetype'),
+			url('/fonts/icomoon.woff?#{$suffix}') format('woff'),
+			url('/fonts/icomoon.svg?#{$suffix}#icomoon') format('svg');
+		font-weight: normal;
+		font-style: normal;
+	}
+}
+@mixin text-overlay {
+	text-align:center;
+	max-width:600px;
+	width:96%;
+	margin:0;
+	padding:1em;
+	@include centerer(true,true);
+}
+/***********************
+	FLEXBOX see https://css-tricks.com/snippets/css/a-guide-to-flexbox/#comment-1592128
+***********************/
+@mixin flex-it {
+    display: -webkit-flex;
+    display: flex;
+}
+@mixin flex-wrap {
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+@mixin flex($grow, $shrink, $basis){
+    -webkit-flex: $grow $shrink $basis;
+    flex: $grow $shrink $basis;
+}
+@mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    flex-direction: $direction;
+}
+@mixin flex-row-reverse {
+    -webkit-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+}
+@mixin flex-justify-content($justify) {
+    -webkit-justify-content: $justify;
+    justify-content:$justify;
+}
+@mixin flex-align-items($align) {
+    -webkit-align-items: $align;
+    align-items: $align;
+}
+@mixin vertically-center {
+    @include flex-it();
+    @include flex-direction(column);
+    @include flex-justify-content(center);
+}
+@mixin order($order) {
+  -webkit-order:$order;
+  order:  $order;
+}

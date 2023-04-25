@@ -1,0 +1,9 @@
+[dev]
+  framework = "hugo"
+  port = 8888
+[build]
+  framework = "hugo"
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild" 

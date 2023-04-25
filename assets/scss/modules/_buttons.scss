@@ -1,0 +1,53 @@
+/******************************************************************
+Site Name:
+Author:
+
+Stylesheet: Button Styles
+
+******************************************************************/
+
+/*********************
+BUTTON DEFAULTS
+*********************/
+%btn {
+    display: inline-block;
+    display: inline-flex;
+    @include flex-justify-content(center);
+    @include flex-align-items(center);
+    position: relative;
+    font-family: $font-std;
+    text-decoration: none;
+    border: 1px solid $theme-blue;
+    background-color: $theme-blue;
+    color: $white;
+    //@include set-font-size(1.05);
+    font-size: 1rem;
+    line-height: 2;
+    font-weight: normal;
+    padding: 0.25rem 1.5em;
+    cursor: pointer;
+    transition:background-color, 0.14s, ease-in-out;
+
+    &:visited {
+        color: $white !important;
+    }
+    &:hover, &:focus{
+        color: $white;
+        background-color: darken($theme-blue, 15%);
+        text-decoration: none;
+        outline: 1px solid $white;
+    } // end hover/focus
+    &:focus, &:active {
+        outline: 1px solid $white;
+        box-shadow: 0 0.1em 0.5em rgba($black, 0.7);
+        color: $white;
+    }
+
+    &:active {
+        top: 1px; // adds a tiny hop to the click
+    } // end active
+} // end .btn
+
+a.primary-btn, button.primary-btn {
+      @extend %btn; // here we load the btn defaults
+}

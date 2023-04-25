@@ -1,0 +1,28 @@
+.header {
+  border-bottom: 1px solid $theme-mid-grey;
+}
+.inner-header {
+  position: relative;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+#logo {
+  margin: 0;
+  a {
+    display: inline-block;
+    position: relative;
+  }
+}
+@media screen and (min-width: $bp-large) {
+  .inner-header {
+    @include flex-it();
+    @include flex-justify-content(space-between);
+  }
+  #logo {
+    picture,
+    img {
+      width: 260px;
+    }
+  }
+}

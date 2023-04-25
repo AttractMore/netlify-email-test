@@ -1,0 +1,106 @@
+/******************************************************************
+Site Name:
+Author: Roger Knght
+
+Stylesheet: Base Stylesheet
+
+******************************************************************/
+
+/*********************
+GENERAL STYLES
+*********************/
+html,
+body {
+  overflow-x: hidden; /* prevents horizontal scroll bars */
+  min-height: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* disable webkit tap highlight */
+  @include set-font-size(1);
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-std;
+  color: $text-color;
+  background-color: $white;
+  min-width: 320px;
+}
+
+/*********************
+LAYOUT & GRID STYLES
+*********************/
+.wrap {
+  width: 96%;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+/*********************
+LINK STYLES
+*********************/
+a,
+a:visited {
+  color: $link-color;
+  text-decoration: underline;
+  //text-decoration-color: $theme-red;
+  transition: color 0.3s ease-in-out;
+
+  /* on hover */
+  &:hover,
+  &:focus {
+    color: $link-hover-color;
+    text-decoration: underline;
+    text-decoration-color: $theme-red;
+    text-decoration-thickness: 2px;
+  }
+  &:focus {
+    outline: 2px dotted;
+  }
+  &:link {
+    /* this highlights links on iPhones/iPads, so it basically works like the :hover selector for mobile devices. */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.3);
+  }
+}
+/******************************************************************
+H1, H2, H3, H4, H5 STYLES
+******************************************************************/
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+  font-weight: 400;
+  margin: 0 0 1.05rem;
+  color: $theme-green;
+  font-family: $font-fancy;
+  a {
+    text-decoration: none;
+  }
+}
+h1,
+.h1 {
+  font-size: 1.383em;
+  margin-top: 1rem;
+}
+h2,
+.h2 {
+  font-size: 1.296em;
+}
+/*********************
+CONTENT STYLES
+*********************/
+p {
+  @include set-font-size(1.05);
+  -ms-word-wrap: normal;
+  word-break: normal; //non-standard css for webkit
+  word-wrap: normal;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  hyphens: none;
+  color: $text-color;
+  margin: 0 0 1.5rem;
+}
